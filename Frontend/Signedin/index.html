@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="../assets/images/fav.png">
+  <meta name="description" content="Reviews Management" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css?version=5">
+  <link rel="stylesheet" href="../assets/css/preloader.css">
+  <link rel="stylesheet" href="../assets/css/select2.min.css">
+
+</head>
+
+<body class="body-loading">
+
+  <div class="load1">
+    <div class="load2">
+      <div class="load3">
+        <div class="load4">
+          <div class="load5">
+            <div class="load6">
+              <!--             <i class="fa fa-google"></i> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <i class="fa fa-solid fa-b"></i>
+  <!-- <i class="fa fa-google"></i> -->
+
+
+
+  <header>
+    <nav class="navbar navbar-expand-sm shadow-sm fixed-top bg-white py-3">
+      <div class="container px-3">
+        <a class="navbar-brand" href="#"><img src="../assets/images/logo.png" style="width: 35%;" alt=""></a>
+        <div class="navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown d-flex align-items-center">
+              <div>
+                <img src="../assets/images/empty-profile.png" class="rounded-circle header-profile-image" alt="">
+              </div>
+              <div>
+                <a class="nav-link dropdown-toggle fw-bold fs-6" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false" id="FullName">
+
+                </a>
+                <ul class="dropdown-menu border-0 rounded-3 text-center">
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                      data-bs-target="#AccountInfoModal">Account Information</a></li>
+                  <li class="w-90 m-auto">
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#SecurityModal">Security
+                      Setting</a></li>
+                  <li class="w-90 m-auto">
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                      data-bs-target="#NotifiModal">Notification Setting</a></li>
+                  <li class="w-90 m-auto">
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" id="logout" href="#">Logout</a></li>
+                </ul>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+
+  <!-- Account Info -->
+  <div class="modal fade" id="AccountInfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form id="accountinfoform" action="" class="p-1">
+            <div class="mb-2">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control rounded-pill py-1 addtracker-input focus-ring focus-ring-dark"
+                style="background-color: #F1F1F1;" id="name" name="name">
+
+            </div>
+            <div class="mb-2">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control rounded-pill py-1 addtracker-input focus-ring focus-ring-dark"
+                style="background-color: #F1F1F1;" id="email" name="email">
+
+            </div>
+            <div class="modal-footer border-0">
+              <button type="submit" class="btn btn-primary btn-sm rounded-0 py-1 px-4">Save changes</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Account Info -->
+
+
+  <!-- Security Info -->
+  <div class="modal fade" id="SecurityModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form id="securityform" action="" class="p-1">
+            <div class="mb-2">
+              <label for="oldpassword" class="form-label">Old Password</label>
+              <div class="position-relative">
+                <input type="password"
+                  class="form-control rounded-pill py-1 addtracker-input focus-ring focus-ring-dark"
+                  style="background-color: #F1F1F1;" id="oldpassword" name="oldpassword">
+                <i id="oldeye" class="eye fa-solid fa-eye-slash fa-lg position-absolute top-50 translate-middle-y"></i>
+
+              </div>
+              <div id="passworderror" class="h-100"></div>
+            </div>
+            <div class="mb-2">
+              <label for="newpassword" class="form-label">New Password</label>
+              <div class="position-relative">
+                <input type="password"
+                  class="form-control rounded-pill py-1 addtracker-input focus-ring focus-ring-dark"
+                  style="background-color: #F1F1F1;" id="newpassword" name="newpassword">
+                <i id="neweye" class="eye fa-solid fa-eye-slash fa-lg position-absolute top-50 translate-middle-y"></i>
+
+              </div>
+              <div id="newerror"></div>
+            </div>
+            <div class="mb-2">
+              <label for="newpassword2" class="form-label">Confirm New Password</label>
+              <div class="position-relative">
+                <input type="password"
+                  class="form-control rounded-pill py-1 addtracker-input focus-ring focus-ring-dark"
+                  style="background-color: #F1F1F1;" id="newpassword2" name="newpassword2">
+                <i id="confirmeye"
+                  class="eye fa-solid fa-eye-slash fa-lg position-absolute top-50 translate-middle-y"></i>
+
+              </div>
+              <div id="confirmerror"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary btn-sm rounded-0 py-1 px-4">Save changes</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Security Info -->
+
+
+
+  <!-- Notification Info -->
+  <div class="modal fade" id="NotifiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form id="notifiform" action="" class="p-1">
+
+            <div class="mb-4 form-check form-switch">
+              <input class="form-check-input btn-lg" style="cursor: pointer;" type="checkbox" role="switch"
+                id="notificheck">
+              <label class="form-check-label" for="notificheck"> Email Notifications</label>
+              <br><small class="d-none">You must save changes to apply this</small>
+            </div>
+
+            <div class="mb-2">
+              <label for="notifiemails" class="form-label">Notifications Emails</label>
+              <br>
+              <select class="form-select" style="width: 100%;" id="notifiemails" multiple="multiple">
+
+              </select>
+            </div>
+            <div class="modal-footer z-n1">
+              <button type="submit" class="btn btn-primary btn-sm rounded-0 py-1 px-4">Save changes</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Notification Info -->
+
+
+  <section>
+    <div class="container">
+
+      <h5 class="fs-6 mb-0">Automated</h5>
+
+      <div class="row">
+        <div class="col-6 col-md-6">
+          <h3 class="fw-bold mt-0">Reviews Trackers</h3>
+        </div>
+        <div class="col-12 col-md-6">
+          <h2 id="balance" class="fs-5 text-md-end"></h2>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-12 col-lg-6">
+
+          <ul class="nav nav-tabs border-0 mt-3 row gx-2 outer-tabs" role="tablist">
+            <li class="nav-item col-6" role="presentation">
+              <button
+                class="btn btn-outline-primary rounded-5 active py-1 px-lg-4 px-2 border-black text-black fw-bold outer-btn w-100"
+                data-bs-toggle="tab" data-bs-target="#my-trackers-tab" type="button" role="tab"><i
+                  class="fa-solid fa-chart-line"></i> My Trackers</button>
+            </li>
+            <li class="nav-item col-6" role="presentation">
+              <button id="outer-business-btn"
+                class="btn btn-outline-primary rounded-5 py-1 px-lg-4 px-2 border-black text-black fw-bold outer-btn w-100"
+                data-bs-toggle="tab" data-bs-target="#my-businesses-tab" type="button" role="tab"><i
+                  class="fa-regular fa-building"></i> My Businesses</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="tab-content mt-3" id="myTabContent2">
+        <div class="tab-pane main-pane fade show active" id="my-trackers-tab" role="tabpanel">
+          <div class="row">
+            <div class="col-12 col-lg-6 d-flex justify-content-end">
+              <ul class="nav nav-tabs border-0 row gx-1 w-75" id="inner-tabs-container" role="tablist">
+
+
+                <li class="nav-item col-4" role="presentation">
+                  <button
+                    class="btn btn-outline-success inner-btn rounded-5 btn-sm w-100 me-3 text-black border-black px-1"
+                    style="font-size: 12px;" id="profile-tab" data-bs-toggle="tab" data-bs-target="#history"
+                    type="button"><i
+                      class="fa-solid fa-clock-rotate-left"></i> History</button>
+                </li>
+                <li class="nav-item col-4" role="presentation">
+                  <button
+                    class="btn btn-outline-success inner-btn rounded-5 me-3 btn-sm w-100 text-black border-black px-1"
+                    style="font-size: 12px;" id="progresstab" data-bs-toggle="tab" data-bs-target="#inProgress"
+                    type="button"><i
+                      class="fa-solid fa-bars-progress"></i> in Progress</button>
+                </li>
+                <li class="nav-item col-4" role="presentation">
+                  <button
+                    class="btn btn-outline-success inner-btn rounded-5 me-3 btn-sm active w-100 text-black border-black px-1"
+                    style="font-size: 12px;" id="home-tab" data-bs-toggle="tab" data-bs-target="#add-tracker-tab"
+                    type="button"><i class="fa-solid fa-plus"></i>
+                    Add Tracker</button>
+                </li>
+                <li class="nav-item d-none col" role="presentation">
+                  <button
+                    class="btn btn-outline-success inner-btn rounded-5 btn-sm w-100 me-3 text-black border-black px-1"
+                    style="font-size: 12px;" id="googlereviewstab" data-bs-toggle="tab" data-bs-target="#googlereviews"
+                    type="button">History</button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content mt-2" id="myTabContent2">
+              <div class="tab-pane inner-tab fade show active" id="add-tracker-tab" role="tabpanel">
+                <div class="row">
+                  <div class="col-12 col-lg-6 mt-4">
+                    <div class="card shadow-sm rounded-5">
+                      <div class="card-body">
+                        <h4 class="p-1 fs-5 fw-bold">Add New Tracker</h4>
+                        <form id="addtrackerform" action="" class="p-1">
+                          <div class="mb-2">
+                            <label for="link" class="form-label">Location link</label>
+                            <input type="text"
+                              class="form-control rounded-pill py-1 addtracker-input focus-ring focus-ring-dark"
+                              style="background-color: #F1F1F1;" id="link" name="link">
+                            <span id="locationerr"></span>
+                          </div>
+                          <div class="mb-1">
+                            <label for="review" class="form-label">Review content</label>
+                            <input type="text"
+                              class="form-control rounded-pill py-1 addtracker-input focus-ring focus-ring-dark"
+                              style="background-color: #F1F1F1;" id="review" name="review">
+                            <span id="reviewerr"></span>
+                          </div>
+                          <div class="text-end mt-3">
+                            <button type="submit" class="btn btn-primary rounded-0 py-0 px-5">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 minus-margin gy-4" id="map">
+
+
+                    <img src="../assets/images/BusinessTracker2.jpg" class="img-fluid rounded-5" alt="">
+
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane inner-tab fade" id="inProgress" role="tabpanel">
+                <div class="row">
+                  <div class="col-12 col-lg-6 mt-4">
+                    <div class="row" id="inprogresslist">
+
+
+
+
+
+
+
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 minus-margin">
+                    <img src="../assets/images/BusinessTracker2.jpg" class="img-fluid rounded-5" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane inner-tab fade" id="history" role="tabpanel">
+                <div class="row">
+                  <div class="col-12 col-lg-6 mt-4">
+                    <div class="row" id="historylist">
+
+    
+                      
+
+                      <h4 class="text-center text-dark fw-light" id="nohistory">There is no trackers in history</h4>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 minus-margin">
+                    <img src="../assets/images/BusinessTracker2.jpg" class="img-fluid rounded-5" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane inner-tab fade" id="googlereviews" role="tabpanel">
+                <div class="row">
+                  <div class="col-12 col-lg-6 mt-4">
+                    <div class="row" id="reviewslist">
+
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 minus-margin">
+                    <img src="../assets/images/BusinessTracker2.jpg" class="img-fluid rounded-5" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="tab-pane main-pane fade d-flex justify-content-center" id="my-businesses-tab" role="tabpanel">
+          <div class="row">
+            <div class="col-12 col-lg-6 d-flex justify-content-end">
+              <ul class="nav nav-tabs border-0 row gx-1 w-75" id="inner-business-tabs-container" role="tablist">
+                <li class="nav-item col-4" role="presentation">
+                  <button
+                    class="btn btn-outline-success business-inner-btn rounded-5 btn-sm w-100 me-3 text-black border-black px-1"
+                    style="font-size: 12px;" id="business-paused-btn" data-bs-toggle="tab" data-bs-target="#business-paused-tab"
+                    type="button"><i class="fa-regular fa-circle-pause"></i>
+                    Paused</button>
+                </li>
+                <li class="nav-item col-4" role="presentation">
+                  <button 
+                    class="btn btn-outline-success business-inner-btn rounded-5 me-3 btn-sm w-100 text-black border-black px-1"
+                    style="font-size: 12px;" id="business-inprogress-btn" data-bs-toggle="tab" data-bs-target="#business-inProgress-tab"
+                    type="button"> <i class="fa-solid fa-location-dot"></i> Active Locations</button>
+                </li>
+                <li class="nav-item col-4" role="presentation">
+                  <button
+                    class="btn btn-outline-success business-inner-btn rounded-5 me-3 btn-sm active w-100 text-black border-black px-1"
+                    style="font-size: 12px;" id="add-business-btn" data-bs-toggle="tab" data-bs-target="#add-business-tab"
+                    type="button"><i class="fa-solid fa-plus"></i>
+                    Add New Location</button>
+                </li>
+                <li class="nav-item d-none col-4" role="presentation">
+                  <button
+                    class="btn btn-outline-success business-inner-btn rounded-5 btn-sm w-100 me-3 text-black border-black px-1"
+                    style="font-size: 12px;" id="business-result-btn" data-bs-toggle="tab" data-bs-target="#business-result-tab"
+                    type="button">Results</button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content mt-2" id="myTabContent3">
+              <div class="tab-pane business-inner-tab fade show active" id="add-business-tab" role="tabpanel">
+                <div class="row">
+                  <div class="col-12 col-lg-6 mt-4">
+                    <div class="card shadow-sm rounded-5">
+                      <div class="card-body">
+                        <h4 class="p-1 fs-5 fw-bold">Add New Business</h4>
+                        <form id="addbusinessform" action="" class="p-1">
+                          <div class="mb-2">
+                            <label for="businesslink" class="form-label">Location link</label>
+                            <input type="text" class="form-control rounded-pill py-1 addtracker-input focus-ring focus-ring-dark"
+                              style="background-color: #F1F1F1;" id="businesslink" name="link">
+                            <span id="businesslocationerr"></span>
+                          </div>
+                          <div class="text-end mt-3">
+                            <button type="submit" class="btn btn-primary rounded-0 py-0 px-5">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 minus-margin gy-4" id="map">
+            
+            
+                    <img src="../assets/images/BusinessTracker2.jpg" class="img-fluid rounded-5" alt="">
+            
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane business-inner-tab fade" id="business-inProgress-tab" role="tabpanel">
+                <div class="row">
+                  <div class="col-12 col-lg-6 mt-4">
+                    <div class="row" id="business-inProgress-list">
+            
+            
+            
+            
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 minus-margin">
+                    <img src="../assets/images/BusinessTracker2.jpg" class="img-fluid rounded-5" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane business-inner-tab fade" id="business-paused-tab" role="tabpanel">
+                <div class="row">
+                  <div class="col-12 col-lg-6 mt-4">
+                    <div class="row" id="business-paused-list">
+            
+            
+          
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 minus-margin">
+                    <img src="../assets/images/BusinessTracker2.jpg" class="img-fluid rounded-5" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane business-inner-tab fade" id="business-result-tab" role="tabpanel">
+                <div class="row">
+                  <div class="col-12 col-lg-6 mt-4">
+                    <div class="row" id="businesslist">
+            
+            
+            
+            
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 minus-margin">
+                    <img src="../assets/images/BusinessTracker2.jpg" class="img-fluid rounded-5" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+  </section>
+
+
+
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/jquery-validation/jquery.validate.min.js"></script>
+  <script src="../assets/js/jquery-validation/additional-methods.min.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/15e8ed2b84.js" crossorigin="anonymous"></script>
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/select2.min.js"></script>
+  <script src="../assets/js/sweetalert2@11.js"></script>
+  <script>
+
+    jQuery(window).ready(function () {
+
+      var q = window.location.search.substring(1);
+
+if (q == "progress") {
+  $(".inner-tab").removeClass('show')
+  $(".inner-tab").removeClass('active')
+  $(".inner-btn").removeClass('active')
+  $("#inProgress").addClass('show');
+  $("#inProgress").addClass('active');
+  $("#progresstab").addClass('active');
+}
+else{
+  if (q == "businessprogress") {
+    $(".outer-btn").removeClass('active');
+    $("#outer-business-btn").addClass('active');
+
+    $('.main-pane').removeClass('active');
+    $('.main-pane').removeClass('show');
+
+    $("#my-businesses-tab").addClass('active');
+    $("#my-businesses-tab").addClass('show');
+
+    $(".business-inner-btn").removeClass('active');
+    $("#business-inprogress-btn").addClass('active');
+
+
+    $(".business-inner-tab").removeClass('active');
+    $(".business-inner-tab").removeClass('show');
+
+    $("#business-inProgress-tab").addClass('show');
+    $("#business-inProgress-tab").addClass('active');
+  }
+  else{
+    if (q == "businesspaused") {
+      $(".outer-btn").removeClass('active');
+    $("#outer-business-btn").addClass('active');
+
+    $('.main-pane').removeClass('active');
+    $('.main-pane').removeClass('show');
+
+    $("#my-businesses-tab").addClass('active');
+    $("#my-businesses-tab").addClass('show');
+
+    $(".business-inner-btn").removeClass('active');
+    $("#business-paused-btn").addClass('active');
+
+
+    $(".business-inner-tab").removeClass('active');
+    $(".business-inner-tab").removeClass('show');
+
+    $("#business-paused-tab").addClass('show');
+    $("#business-paused-tab").addClass('active');
+    }
+  }
+}
+
+
+
+
+      if (localStorage.getItem('UserId') == undefined || localStorage.getItem('UserId') == null || localStorage.getItem('UserId') == "") {
+        window.open('../index.html', '_self');
+      }
+
+      else {
+        $("#FullName").text(localStorage.getItem('FullName'))
+
+
+        $("#logout").click(function () {
+          localStorage.removeItem('UserId');
+          localStorage.removeItem('FullName');
+          localStorage.removeItem('PhoneNumber');
+          localStorage.removeItem('Email');
+          window.open('../index.html', '_self')
+
+        })
+
+
+        $.ajax({
+          url: "APIURL/profile/balance?apiKey=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          success: function (res) {
+
+            if (res.balance <= 2) {
+              $("#balance").append(`Remaining Balance: <span class="text-danger">` + res.balance.toFixed(2) + `$</span>`)
+            }
+            else {
+              $("#balance").append(`Remaining Balance: <span>` + res.balance.toFixed(2) + `</span> $`)
+            }
+
+
+          }
+        })
+
+
+
+
+
+
+        $.ajax({
+          url:"https://rev.ameksaapii.xyz/Business/GetInProgress",
+          success:function(res){
+            if (res.length == 0) {
+              $("#business-inProgress-list").append('<h4 class="text-center text-dark fw-light">There is no business tracking in progress</h4>')
+            }
+
+            $.each(res,function(){
+              var dayspercent = ((365 - this.daysRemaining) / 365) * 100;
+
+              $("#business-inProgress-list").append(`
+              <div class="col-12 my-3">
+              <div class="card shadow-sm rounded-5">
+                <div class="card-body">
+                  <div class="row align-items-start">
+                    <div class="col-12 col-xl-5 py-4"> <span class="rev-img"><img src="` + this.imgUrl + `"
+                          class="img-fluid rounded-5"></span> </div>
+                    <div class="col-12 col-xl-7 py-4">
+                      <h2 class="fw-bold fs-4 rev-place-name">` + this.businessName + `</h2>
+                      <ul class="list-unstyled">
+                        <li><strong>Total: </strong>` + this.numberOfReviews + ` Reviews</li>
+                        <li><strong>Last 7d: </strong>+` + this.lastWeek + ` Reviews</li>
+                        <li><strong>Last 30d: </strong>+` + this.lastMonth + ` Reviews</li>
+                      </ul>
+                      <div class="d-flex justify-content-between mt-1">
+                                      <div class=" fw-bold fs-5"><i class="fa-solid fa-star" style="color: #f6c002;"></i> <span>` +
+                this.rating + `</span></div>
+                                      <div class="text-end" style="margin-top:3px;">` + this.daysRemaining + ` Days Remaining</div>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
+                                      aria-valuemax="100">
+                                      <div class="progress-bar bg-success" style="width: ` + dayspercent + `%"></div>
+                                    </div>
+                                  </div>
+                          <div class="mt-1 row gx-3">
+                                    <div class="col-6"><button class="btn btn-danger w-100 rounded-0 pause">Pause Tracking</button><span
+                                        class="d-none">` + this.id + `</span></div>
+                                    <div class="col-6"><a href="` + this.locationLink + `" target="_blank"
+                                        class="btn btn-primary rounded-0 w-100">View Location</a> </div>
+                                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              `)
+            })
+
+          }
+        })
+
+
+
+        $.ajax({
+          url:"https://rev.ameksaapii.xyz/Business/GetPaused",
+          success:function(res){
+            if (res.length == 0) {
+              $("#business-paused-list").append('<h4 class="text-center text-dark fw-light">There is no paused business trackings</h4>')
+            }
+
+            $.each(res,function(){
+
+
+              $("#business-paused-list").append(`
+              <div class="col-12 my-3">
+              <div class="card shadow-sm rounded-5">
+                <div class="card-body">
+                  <div class="row align-items-start">
+                    <div class="col-12 col-xl-5 py-4"> <span class="rev-img"><img src="` + this.imgUrl + `"
+                          class="img-fluid rounded-5"></span> </div>
+                    <div class="col-12 col-xl-7 py-4">
+                      <h2 class="fw-bold fs-4 rev-place-name">` + this.businessName + `</h2>
+                      <ul class="list-unstyled">
+                        <li><strong>Total: </strong>` + this.numberOfReviews + ` Reviews</li>
+                      </ul>
+                      <div class="my-4"> <strong>Last Known Rating:</strong> <i class="fa-solid fa-star" style="color: #f6c002;"
+                          aria-hidden="true"></i> ` + this.rating + ` </div>
+                          <div class="mt-1 row gx-3">
+                                    <div class="col-6"><button class="btn btn-success w-100 rounded-0 resume">Resume</button><span
+                                        class="d-none">` + this.id + `</span></div>
+                                        <div class="col-6"><button class="btn btn-danger w-100 rounded-0 deletebusiness">Delete</button><span
+                                        class="d-none">` + this.id + `</span></div>
+                            
+                                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              `)
+            })
+          }
+        })
+
+
+        $("#business-paused-list").on('click','.deletebusiness',function(){
+          
+          var card = $(this).parent().parent().parent().parent().parent().parent().parent();
+          var id = $(this).next().text();
+          Swal.fire({
+            title: "Are you sure to delete?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              $("body").addClass('body-loading');
+
+              $.ajax({
+                url:"https://rev.ameksaapii.xyz/Business/DeleteBusiness/"+id,
+                success:function(res){
+                  if (res == true) {
+                    card.remove();
+                    $(".body-loading").removeClass('body-loading');
+                    Swal.fire({
+                      title: "Deleted!",
+                      text: "Your business has been deleted.",
+                      icon: "success"
+                    });
+                  }
+                }
+              })
+
+
+
+          
+            }
+          });
+        })
+
+
+        $("#business-inProgress-list").on('click','.pause',function(){
+          $("body").addClass('body-loading');
+          var id = $(this).next().text();
+          $.ajax({
+            url:"https://rev.ameksaapii.xyz/Business/PauseTracking/"+id,
+            success:function(res){
+               if (res == true) {
+                window.open('index.html?businesspaused')
+               }
+            }
+          })
+        })
+
+        $("#business-paused-list").on('click','.resume',function(){
+          $("body").addClass('body-loading');
+          var id = $(this).next().text();
+          $.ajax({
+            url:"https://rev.ameksaapii.xyz/Business/ResumeTracking/"+id,
+            success:function(res){
+               if (res == true) {
+                window.open('index.html?businessprogress')
+               }
+               
+            }
+          })
+        })
+
+
+
+
+        $.ajax({
+          url: "https://rev.ameksaapii.xyz/ReviewTracking/GetInProgress",
+          success: function (res) {
+
+
+            if (res.length == 0) {
+              $("#inprogresslist").append('<h4 class="text-center text-dark fw-light">There is no trackers in progress</h4>')
+            }
+
+            $.each(res, function () {
+
+              var dayspercent = ((60 - this.daysRemaining) / 60) * 100;
+
+              $("#inprogresslist").append(`<div class="col-12 my-3">
+                        <div class="card shadow-sm rounded-5">
+                          <div class="card-body">
+                            <div class="row align-items-start">
+                              <div class="col-12 col-xl-5 py-4"> <span><img src="` + this.imageUrl + `" class="img-fluid rounded-5" alt=""></span>
+                              </div>
+                              <div class="col-12 col-xl-7 py-4">
+                                <h2 class="fw-bold fs-4">` + this.placeName + `</h2>
+                                <h3 class="fs-5 fw-light"><span class="fs-5 fw-bold">Review:</span><br><span>` + this.reviewText + `</span>
+                                </h3> <span style="color: #979797;">By <span>` + this.reviewAuthor + `</span> | <span>` + this.reviewDateTime
+                + `</span>
+                                  <div class="progress-container mt-1">
+                                    <div class="d-flex justify-content-between mt-1">
+                                      <div class=" fw-bold fs-5"><i class="fa-solid fa-star" style="color: #f6c002;"></i> <span>` +
+                this.rating + `</span></div>
+                                      <div class="text-end" style="margin-top:3px;">` + this.daysRemaining + ` Days Remaining</div>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
+                                      aria-valuemax="100">
+                                      <div class="progress-bar bg-success" style="width: ` + dayspercent + `%"></div>
+                                    </div>
+                                  </div>
+                                  <div class="mt-1 row gx-3">
+                                    <div class="col-6"><button class="btn btn-danger w-100 rounded-0 stop">Stop Tracking</button><span
+                                        class="d-none">` + this.id + `</span></div>
+                                    <div class="col-6"><a href="` + this.locationUrl + `" target="_blank"
+                                        class="btn btn-primary rounded-0 w-100">Location link</a> </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>`)
+            })
+          }
+        }).then(function () {
+          $(".body-loading").removeClass('body-loading');
+        })
+
+        $.ajax({
+          url: "https://rev.ameksaapii.xyz/ReviewTracking/GetInHistory",
+          success: function (res) {
+
+            if (res.length == 0) {
+              $("#nohistory").removeClass('d-none');
+            }
+            else {
+              $("#nohistory").addClass('d-none');
+            }
+
+            $.each(res, function () {
+              var sclass = "";
+              switch (this.status) {
+                case "Canceled":
+
+                  sclass = "text-warning"
+                  break;
+                case "Removed":
+                  sclass = "text-danger"
+                  break;
+                case "Completed":
+                  sclass = "text-success"
+                  break;
+                default:
+                  break;
+              }
+              var dayspercent = ((60 - this.daysRemaining) / 60) * 100;
+
+              $("#historylist").append(`<div class="col-12 my-3">
+                        <div class="card shadow-sm rounded-5">
+                          <div class="card-body">
+                            <div class="row align-items-start">
+                              <div class="col-12 col-lg-5 py-4"> <span><img src="` + this.imageUrl + `" class="img-fluid rounded-5" alt=""></span>
+                              </div>
+                              <div class="col-12 col-lg-7 py-4">
+                                <h2 class="fw-bold mb-0 fs-4">` + this.placeName + `</h2>
+                                <p class="` + sclass + ` mt-0">` + this.status + `</p>
+                                <h3 class="fs-5 fw-light"><span class="fs-5 fw-bold">Review:</span><br><span>` + this.reviewText + `</span>
+                                </h3> <span style="color: #979797;">By <span>` + this.reviewAuthor + `</span> | <span>` + this.reviewDateTime
+                + `</span>
+                                  <div class="progress-container mt-1">
+                                    <div class="d-flex justify-content-between mt-1">
+                                      <div class=" fw-bold fs-5"><i class="fa-solid fa-star" style="color: #f6c002;"></i> <span>` +
+                this.rating + `</span></div>
+                                    </div>
+                                  </div>
+                                  <div class="mt-1 row g-2">
+                                    <div class="col-6"><button class="btn btn-danger w-100 rounded-0 deletereview">Delete</button><span
+                                        class="d-none">` + this.id + `</span></div>
+                                        <div class="col-6"><button class="btn btn-success w-100 rounded-0 retrack">Retrack</button><span
+                                        class="d-none">` + this.id + `</span></div>
+                                    <div class="col-12"><a href="` + this.locationUrl + `" target="_blank"
+                                        class="btn btn-primary rounded-0 w-100">Location link</a> </div>
+                                     
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>`)
+            })
+          }
+        })
+
+
+
+        $("#historylist").on('click','.deletereview',function(){
+          
+          var card = $(this).parent().parent().parent().parent().parent().parent().parent();
+          var id = $(this).next().text();
+          Swal.fire({
+            title: "Are you sure to delete?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              $("body").addClass('body-loading');
+
+              $.ajax({
+                url:"https://rev.ameksaapii.xyz/ReviewTracking/DeleteReview/"+id,
+                success:function(res){
+                  if (res == true) {
+                    card.remove();
+                    $(".body-loading").removeClass('body-loading');
+                    Swal.fire({
+                      title: "Deleted!",
+                      text: "Your business has been deleted.",
+                      icon: "success"
+                    });
+                  }
+                }
+              })
+
+
+
+          
+            }
+          });
+        })
+
+
+
+        $("#historylist").on('click', '.retrack', function () {
+          var id = $(this).next().text();
+
+          $.ajax({
+            url: "https://rev.ameksaapii.xyz/ReviewTracking/Retrack/" + id,
+            success: function (res) {
+              if (res == true) {
+                window.open("index.html?progress", "_self")
+              }
+            }
+          })
+        })
+
+
+        $.ajax({
+          url: "https://rev.ameksaapii.xyz/User/GetUserInfo",
+          success: function (res) {
+            $("#name").val(res.name);
+            $("#email").val(res.email);
+          }
+        })
+
+
+        $(".eye").click(function () {
+          var btn = $(this).prev();
+          var type = btn.attr('type');
+
+          switch (type) {
+            case "text":
+              $(this).removeClass('fa-eye');
+              $(this).addClass('fa-eye-slash');
+              btn.attr('type', 'password');
+              break;
+            case "password":
+              $(this).removeClass('fa-eye-slash');
+              $(this).addClass('fa-eye');
+              btn.attr('type', 'text');
+              break;
+            default:
+              window.location.reload();
+              break;
+          }
+        })
+
+
+        $("#notificheck").click(function () {
+          $("#notificheck").next().next().next('small').removeClass('d-none')
+          if ($("#notificheck").is(':checked')) {
+            $("#notifiemails").removeAttr('disabled', '')
+          }
+          else {
+            $("#notifiemails").attr('disabled', '')
+          }
+        })
+
+
+        $.ajax({
+          url: "https://rev.ameksaapii.xyz/User/GetNotificationSetting",
+          success: function (res) {
+
+            if (res.isOn == "true" || res.isOn == true) {
+              $("#notificheck").attr('checked', "")
+            }
+            else {
+              $("#notificheck").removeAttr('checked')
+            }
+
+
+            $.each(res.emails, function () {
+              $("#notifiemails").append('<option value="' + this + '" selected>' + this + '</option>')
+            })
+
+          }
+        }).then(function () {
+          $("#notifiemails").select2({
+            dropdownParent: $('#NotifiModal'),
+            tags: true
+          });
+        })
+
+
+
+        $("body").on('submit', '#notifiform', function (e) {
+          e.preventDefault();
+
+          var onoff = '';
+          if ($("#notificheck").is(':checked')) {
+            onoff = 'true';
+          }
+          else {
+            onoff = 'false';
+          }
+          $("body").addClass('body-loading');
+          $("#NotifiModal").modal('hide');
+          var list = [];
+
+          $.each($("#notifiemails").children('option:selected'), function () {
+            var email = $(this).val();
+            list.push(email);
+          })
+
+          var obj = { "IsOn": onoff, "Emails": list }
+
+          $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "https://rev.ameksaapii.xyz/User/UpdateNotificationSetting",
+            data: JSON.stringify(obj),
+            success: function (res) {
+              if (res == true) {
+                $("#notificheck").next('small').addClass('d-none')
+                $(".body-loading").removeClass('body-loading');
+              }
+            }
+          })
+
+
+        })
+
+
+
+
+        $("#accountinfoform").validate({
+          onfocusout: function (e) {
+            this.element(e);
+          },
+          rules: {
+            name: {
+              required: true
+            },
+            email: {
+              required: true,
+              email: true
+            }
+          },
+          messages: {
+            name: {
+              required: "name is required"
+            },
+            email: {
+              required: "email is required",
+              email: "Please enter a valid email address"
+            }
+          }
+        })
+
+
+
+
+        $("body").on('submit', '#accountinfoform', function (e) {
+          e.preventDefault();
+          if ($("#accountinfoform").valid() == true) {
+            $("#AccountInfoModal").modal('hide');
+
+            $("body").addClass('body-loading');
+            var name = $("#name").val();
+            var email = $("#email").val();
+
+            var obj = { "Name": name, "Email": email }
+
+            $.ajax({
+              type: "POST",
+              contentType: "application/json",
+              url: "https://rev.ameksaapii.xyz/User/UpdateUserInfo",
+              data: JSON.stringify(obj),
+              success: function (res) {
+                if (res == true) {
+                  localStorage.setItem('FullName', name);
+                  localStorage.setItem('Email', email);
+                  $("#FullName").text(localStorage.getItem('FullName'))
+                  $(".body-loading").removeClass('body-loading');
+                }
+              }
+            })
+          }
+
+
+        })
+
+
+        $("#securityform").validate({
+          onfocusout: function (e) {
+            this.element(e);
+          },
+          rules: {
+            oldpassword: {
+              required: true,
+              minlength: 7
+            },
+            newpassword: {
+              required: true,
+              minlength: 7
+            },
+            newpassword2: {
+              required: true,
+              minlength: 7
+            }
+
+          },
+          messages: {
+            oldpassword: {
+              required: "old password is required",
+              minlength: "password minimum length is 7 characters"
+            },
+            newpassword: {
+              required: "new password is required",
+              minlength: "password minimum length is 7 characters"
+            },
+            newpassword2: {
+              required: "new password confirmation is required",
+              minlength: "password minimum length is 7 characters"
+            }
+          },
+          errorPlacement: function (error, element) {
+
+
+            error.appendTo(element.parent().next())
+
+          }
+        })
+
+
+
+        $("body").on('submit', '#securityform', function (e) {
+
+          e.preventDefault();
+
+          if ($("#securityform").valid() == true) {
+            $("#SecurityModal").modal('hide');
+            $("body").addClass('body-loading');
+            var oldpassword = $("#oldpassword").val();
+            var newpassword = $("#newpassword").val();
+            var newpassword2 = $("#newpassword2").val();
+
+
+            if (newpassword != newpassword2) {
+              $("#SecurityModal").modal('show');
+              $(".body-loading").removeClass('body-loading');
+              alert("New password and password confirmation don't match");
+              return;
+            }
+
+
+            var obj = { "OldPassword": oldpassword, "NewPassword": newpassword }
+
+
+            $.ajax({
+              type: "POST",
+              contentType: "application/json",
+              url: "https://rev.ameksaapii.xyz/User/UpdatePassword",
+              data: JSON.stringify(obj),
+              success: function (res) {
+                if (res == true) {
+                  $("#oldpassword").val('');
+                  $("#newpassword").val('');
+                  $("#newpassword2").val('');
+                  $("#SecurityModal").modal('hide');
+                  $(".body-loading").removeClass('body-loading');
+                }
+              }
+            })
+
+
+          }
+
+
+
+        })
+
+
+
+        $("#inprogresslist").on('click', '.stop', function () {
+          $("body").addClass('body-loading');
+          var id = $(this).next().text();
+          $.ajax({
+            url: "https://rev.ameksaapii.xyz/ReviewTracking/StopTracking/" + id,
+            success: function (res) {
+              if (res == true) {
+                window.open('index.html', "_self");
+              }
+              $(".body-loading").removeClass('body-loading');
+            }
+          })
+
+        })
+
+
+
+        
+        $("#addbusinessform").validate({
+          onfocusout: function (e) {
+            this.element(e);
+          },
+          rules: {
+            link: {
+              required: true,
+              url: false
+            }
+          },
+          messages: {
+            link: {
+              required: "Link is required",
+              url: 'Please enter a valid url'
+            }
+          },
+          errorPlacement: function (error, element) {
+
+            switch (element.attr("name")) {
+              case 'link':
+                error.appendTo('#businesslocationerr');
+                break;
+              default:
+                break;
+            }
+
+          }
+        })
+
+        var businessList = [];
+
+
+$("#addbusinessform").submit(function (e) {
+  e.preventDefault();
+
+  if ($("#addbusinessform").valid() == true) {
+
+    $("body").addClass('body-loading')
+
+    var link = $("#businesslink").val();
+
+    var obj = { "Link": link }
+    $.ajax({
+      url: "https://rev.ameksaapii.xyz/Http/GetBusiness",
+      type: "POST",
+      contentType: "application/json",
+      data: JSON.stringify(obj),
+      success: function (res) {
+        console.log(res)
+        console.log('\n\n\n')
+
+        businessList = [];
+
+
+        $.ajax({
+          url: res.results_location,
+          success: function (res) {
+            console.log(res)
+            console.log('\n\n\n')
+
+            $("#businesslist").children('div').remove();
+            $.each(res.data, function () {
+              var PlaceName = this.name;
+              var img = this.photo;
+              var locationlink = this.location_link;
+              //var countryCode = this.country_code;
+              //var state = this.state;
+              //var city = this.city;
+              //var address = this.borough;
+              var reviewsCount = this.reviews;
+              var logoLink = this.logo;
+              var rating = this.rating;
+              var googleId = this.google_id;
+
+
+              var finalimg = img;
+
+              if (finalimg == "" || finalimg == null) {
+                finalimg = logoLink;
+              }
+
+              var obj = { "PlaceName": PlaceName, "ImageUrl": finalimg, "Rating": rating, "LocationLink": locationlink,"ReviewsCount":reviewsCount,"googleId":googleId }
+                businessList.push(obj);
+                $("#businesslist").append('<div class="col-12 my-3"> <div class="card shadow-sm rounded-5"> <div class="card-body"> <div class="row align-items-start"> <div class="col-12 col-xl-5 py-4"> <span class="rev-img"><img src="' + finalimg + '" class="img-fluid rounded-5"></span> </div> <div class="col-12 col-xl-7 py-4"> <h2 class="fw-bold fs-4 rev-place-name">' + PlaceName + '</h2> <ul class="list-unstyled"> <li><strong>Total: </strong>' + reviewsCount + ' Reviews</li> </ul> <div class="my-4"> <strong>Average Rating:</strong> <i class="fa-solid fa-star" style="color: #f6c002;" aria-hidden="true"></i> ' + rating + ' </div> <div class="button-group mt-1"> <button class="btn btn-success btn-block w-100 startbusiness">Start Tracking</button><span class="d-none rev-googleid">' + googleId + '</span> </div> </div> </div> </div> </div> </div>');
+
+
+
+            })
+
+            $(".body-loading").removeClass('body-loading');
+
+
+            $(".business-inner-btn").removeClass('active');
+            $('.business-inner-tab').removeClass('show').removeClass('active');
+            $("#business-result-tab").addClass('show');
+            $("#business-result-tab").addClass('active');
+            $("#business-result-btn").addClass('active');
+          }
+        })
+
+      }
+    })
+
+  }
+
+
+})
+        
+
+
+
+
+
+
+
+
+
+
+        $("#addtrackerform").validate({
+          onfocusout: function (e) {
+            this.element(e);
+          },
+          rules: {
+            link: {
+              required: true,
+              url: false
+            },
+            review: {
+              required: true
+            }
+          },
+          messages: {
+            link: {
+              required: "Link is required",
+              url: 'Please enter a valid url'
+            },
+            review: {
+              required: "Review is required"
+            }
+          },
+          errorPlacement: function (error, element) {
+
+            switch (element.attr("id")) {
+              case 'link':
+                error.appendTo('#locationerr');
+                break;
+              case 'review':
+                error.appendTo('#reviewerr');
+                break;
+
+              default:
+                break;
+            }
+
+          }
+        })
+
+
+
+        var revList = [];
+
+
+        $("#addtrackerform").submit(function (e) {
+          e.preventDefault();
+
+          if ($("#addtrackerform").valid() == true) {
+
+            $("body").addClass('body-loading')
+
+            var link = $("#link").val();
+            var review = $("#review").val();
+
+            var obj = { "Link": link, "Review": review }
+            $.ajax({
+              url: "https://rev.ameksaapii.xyz/Http/GetReviews",
+              type: "POST",
+              contentType: "application/json",
+              data: JSON.stringify(obj),
+              success: function (res) {
+
+
+                revList = [];
+
+
+                $.ajax({
+                  url: res.results_location,
+                  success: function (res) {
+                    console.log(res)
+
+                    $("#reviewslist").children('div').remove();
+                    $.each(res.data, function () {
+                      var PlaceName = this.name;
+
+                      var img = this.photo;
+                      var locationlink = this.location_link;
+                      $.each(this.reviews_data, function () {
+                        var rating = this.review_rating;
+                        var Review = this.review_text;
+                        var Author = this.author_title;
+                        var DateTime = this.review_datetime_utc;
+                        var googleid = this.google_id;
+
+                        var obj = { "ReviewText": Review, "PlaceName": PlaceName, "ReviewAuthor": Author, "ReviewDateTime": DateTime, "ReviewGoogleId": googleid, "ImageUrl": img, "Rating": rating, "LocationUrl": locationlink }
+                        revList.push(obj);
+                        $("#reviewslist").append('<div class="col-12 my-3"> <div class="card shadow-sm rounded-5"> <div class="card-body"> <div class="row align-items-start"> <div class="col-12 col-xl-5 py-4"> <span class="rev-img"><img src="' + img + '" class="img-fluid rounded-5" alt=""></span> </div> <div class="col-12 col-xl-7 py-4"> <h2 class="fw-bold fs-4 rev-place-name">' + PlaceName + '</h2> <h3 class="fs-5 fw-light"><span class="fs-5 fw-bold">Review:</span><br><span class="rev-text">' + Review + '</span></h3> <span style="color: #979797;">By <span class="rev-author">' + Author + '</span> | <span class="rev-date">' + DateTime + '</span> <div class="mt-1 fw-bold fs-5"><i class="fa-solid fa-star" style="color: #f6c002;"></i> <span class="rev-rating">' + rating + '</span></div> <div class="button-group mt-1"> <button class="btn btn-success btn-block w-100 start">Start Tracking</button><span class="d-none rev-googleid">' + googleid + '</span> </div> </div> </div> </div> </div> </div>');
+
+                      })
+
+
+
+                    })
+
+                    $(".body-loading").removeClass('body-loading');
+
+
+                    $(".inner-btn").removeClass('active');
+                    $('.inner-tab').removeClass('show').removeClass('active');
+                    $("#googlereviews").addClass('show');
+                    $("#googlereviews").addClass('active');
+                    $("#googlereviewstab").addClass('active');
+                  }
+                })
+
+              }
+            })
+
+          }
+
+
+        })
+
+
+
+
+        $("#businesslist").on('click','.startbusiness',function(){
+          $("body").addClass('body-loading')
+          var googleid = $(this).next().text();
+          var obj = businessList.filter(a => a.googleId == googleid)[0];
+
+          var objj = { "BusinessName": obj.PlaceName, "ImgUrl": obj.ImageUrl, "Rating": obj.Rating, "LocationLink": obj.LocationLink,"NumberOfReviews":obj.ReviewsCount }
+
+
+          console.log(objj)
+
+          $.ajax({
+            url: "https://rev.ameksaapii.xyz/Business/AddNewBusiness",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(objj),
+            success: function (res) {
+              if (res == true) {
+                window.open('index.html?businessprogress')
+              }
+              else {
+                $(".body-loading").removeClass('body-loading');
+              }
+
+            }
+          })
+        })
+
+
+        $("#reviewslist").on('click', '.start', function () {
+
+          $("body").addClass('body-loading')
+          var googleid = $(this).next().text();
+          var obj = revList.filter(a => a.ReviewGoogleId == googleid)[0];
+
+          var objj = { "ReviewText": obj.ReviewText, "PlaceName": obj.PlaceName, "ReviewAuthor": obj.ReviewAuthor, "ReviewDateTime": obj.ReviewDateTime, "ReviewGoogleId": obj.ReviewGoogleId, "ImageUrl": obj.ImageUrl, "Rating": String(obj.Rating), "LocationUrl": obj.LocationUrl }
+
+
+
+
+
+          $.ajax({
+            url: "https://rev.ameksaapii.xyz/ReviewTracking/AddNewTracker",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(objj),
+            success: function (res) {
+              if (res == true) {
+                window.open('index.html?progress', "_self");
+              }
+              else {
+                $(".body-loading").removeClass('body-loading');
+              }
+
+            }
+          })
+
+        })
+
+
+      }
+
+
+
+
+
+
+
+    })
+
+
+  </script>
+</body>
+
+</html>

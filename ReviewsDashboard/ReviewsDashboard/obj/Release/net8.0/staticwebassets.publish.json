@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "DpYu5hXnFJB87gwulW8HMipDRWtzpvAuYX/9g5LG//U=",
+  "Source": "ReviewsDashboard",
+  "BasePath": "_content/ReviewsDashboard",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ReviewsDashboard\\wwwroot",
+      "Source": "ReviewsDashboard",
+      "ContentRoot": "C:\\Users\\Omar\\source\\repos\\ReviewsDashboard\\ReviewsDashboard\\wwwroot\\",
+      "BasePath": "_content/ReviewsDashboard",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

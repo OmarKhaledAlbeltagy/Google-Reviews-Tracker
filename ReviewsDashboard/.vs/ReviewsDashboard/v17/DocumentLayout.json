@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Omar\\Desktop\\GIT\\Google Review Scraping\\ReviewsDashboard\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C3445F6-40B5-4727-9358-808A905B1350}|ReviewsDashboard\\ReviewsDashboard.csproj|c:\\users\\omar\\desktop\\git\\google review scraping\\reviewsdashboard\\reviewsdashboard\\repos\\checkrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C3445F6-40B5-4727-9358-808A905B1350}|ReviewsDashboard\\ReviewsDashboard.csproj|solutionrelative:reviewsdashboard\\repos\\checkrep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C3445F6-40B5-4727-9358-808A905B1350}|ReviewsDashboard\\ReviewsDashboard.csproj|c:\\users\\omar\\desktop\\git\\google review scraping\\reviewsdashboard\\reviewsdashboard\\repos\\httprep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C3445F6-40B5-4727-9358-808A905B1350}|ReviewsDashboard\\ReviewsDashboard.csproj|solutionrelative:reviewsdashboard\\repos\\httprep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C3445F6-40B5-4727-9358-808A905B1350}|ReviewsDashboard\\ReviewsDashboard.csproj|c:\\users\\omar\\desktop\\git\\google review scraping\\reviewsdashboard\\reviewsdashboard\\controllers\\reviewtrackingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C3445F6-40B5-4727-9358-808A905B1350}|ReviewsDashboard\\ReviewsDashboard.csproj|solutionrelative:reviewsdashboard\\controllers\\reviewtrackingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HttpRep.cs",
+              "DocumentMoniker": "C:\\Users\\Omar\\Desktop\\GIT\\Google Review Scraping\\ReviewsDashboard\\ReviewsDashboard\\Repos\\HttpRep.cs",
+              "RelativeDocumentMoniker": "ReviewsDashboard\\Repos\\HttpRep.cs",
+              "ToolTip": "C:\\Users\\Omar\\Desktop\\GIT\\Google Review Scraping\\ReviewsDashboard\\ReviewsDashboard\\Repos\\HttpRep.cs",
+              "RelativeToolTip": "ReviewsDashboard\\Repos\\HttpRep.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAIwBoAAACFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T21:30:28.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CheckRep.cs",
+              "DocumentMoniker": "C:\\Users\\Omar\\Desktop\\GIT\\Google Review Scraping\\ReviewsDashboard\\ReviewsDashboard\\Repos\\CheckRep.cs",
+              "RelativeDocumentMoniker": "ReviewsDashboard\\Repos\\CheckRep.cs",
+              "ToolTip": "C:\\Users\\Omar\\Desktop\\GIT\\Google Review Scraping\\ReviewsDashboard\\ReviewsDashboard\\Repos\\CheckRep.cs",
+              "RelativeToolTip": "ReviewsDashboard\\Repos\\CheckRep.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAUwFgAAACQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T21:29:58.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReviewTrackingController.cs",
+              "DocumentMoniker": "C:\\Users\\Omar\\Desktop\\GIT\\Google Review Scraping\\ReviewsDashboard\\ReviewsDashboard\\Controllers\\ReviewTrackingController.cs",
+              "RelativeDocumentMoniker": "ReviewsDashboard\\Controllers\\ReviewTrackingController.cs",
+              "ToolTip": "C:\\Users\\Omar\\Desktop\\GIT\\Google Review Scraping\\ReviewsDashboard\\ReviewsDashboard\\Controllers\\ReviewTrackingController.cs",
+              "RelativeToolTip": "ReviewsDashboard\\Controllers\\ReviewTrackingController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T19:08:30.44Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

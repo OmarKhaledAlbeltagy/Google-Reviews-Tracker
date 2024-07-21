@@ -1,0 +1,98 @@
+Hosting environment: Development
+Content root path: C:\Users\Omar\source\repos\ReviewsDashboard\ReviewsDashboard
+Now listening on: http://localhost:22333/
+Application started. Press Ctrl+C to shut down.
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+warn: Microsoft.EntityFrameworkCore.Query[10103]
+      The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (285ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Id], [p].[Property], [p].[Value]
+      FROM [properties] AS [p]
+      WHERE [p].[Id] = @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (265ms) [Parameters=[@__start_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT [r].[Id], [r].[AddingDateTime], [r].[ImageUrl], [r].[LocationUrl], [r].[PlaceName], [r].[Rating], [r].[ReviewAuthor], [r].[ReviewDateTime], [r].[ReviewGoogleId], [r].[ReviewText], [r].[StartTracking]
+      FROM [review] AS [r]
+      WHERE [r].[StartTracking] >= @__start_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (235ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Email]
+      FROM [email] AS [e]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (255ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+      FROM [AspNetUsers] AS [a]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (232ms) [Parameters=[@__start_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT [r].[Id], [r].[AddingDateTime], [r].[ImageUrl], [r].[LocationUrl], [r].[PlaceName], [r].[Rating], [r].[ReviewAuthor], [r].[ReviewDateTime], [r].[ReviewGoogleId], [r].[ReviewText], [r].[StartTracking]
+      FROM [review] AS [r]
+      WHERE [r].[StartTracking] < @__start_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (346ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [review] ([AddingDateTime], [ImageUrl], [LocationUrl], [PlaceName], [Rating], [ReviewAuthor], [ReviewDateTime], [ReviewGoogleId], [ReviewText], [StartTracking])
+      OUTPUT INSERTED.[Id]
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (248ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [r].[Id], [r].[AddingDateTime], [r].[ImageUrl], [r].[LocationUrl], [r].[PlaceName], [r].[Rating], [r].[ReviewAuthor], [r].[ReviewDateTime], [r].[ReviewGoogleId], [r].[ReviewText], [r].[StartTracking]
+      FROM [review] AS [r]
+      WHERE [r].[Id] = @__id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (273ms) [Parameters=[@__start_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT [r].[Id], [r].[AddingDateTime], [r].[ImageUrl], [r].[LocationUrl], [r].[PlaceName], [r].[Rating], [r].[ReviewAuthor], [r].[ReviewDateTime], [r].[ReviewGoogleId], [r].[ReviewText], [r].[StartTracking]
+      FROM [review] AS [r]
+      WHERE [r].[StartTracking] < @__start_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (244ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Id], [p].[Property], [p].[Value]
+      FROM [properties] AS [p]
+      WHERE [p].[Id] = @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (256ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+      FROM [AspNetUsers] AS [a]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (260ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+      FROM [AspNetUsers] AS [a]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (245ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Email]
+      FROM [email] AS [e]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (230ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Email]
+      FROM [email] AS [e]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (250ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Id], [p].[Property], [p].[Value]
+      FROM [properties] AS [p]
+      WHERE [p].[Id] = @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (292ms) [Parameters=[@__start_0='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT [r].[Id], [r].[AddingDateTime], [r].[ImageUrl], [r].[LocationUrl], [r].[PlaceName], [r].[Rating], [r].[ReviewAuthor], [r].[ReviewDateTime], [r].[ReviewGoogleId], [r].[ReviewText], [r].[StartTracking]
+      FROM [review] AS [r]
+      WHERE [r].[StartTracking] >= @__start_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3,283ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [r].[Id], [r].[AddingDateTime], [r].[ImageUrl], [r].[LocationUrl], [r].[PlaceName], [r].[Rating], [r].[ReviewAuthor], [r].[ReviewDateTime], [r].[ReviewGoogleId], [r].[ReviewText], [r].[StartTracking]
+      FROM [review] AS [r]
+      WHERE [r].[Id] = @__id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1,366ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+      FROM [AspNetUsers] AS [a]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1,666ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Email]
+      FROM [email] AS [e]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2,069ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Id], [p].[Property], [p].[Value]
+      FROM [properties] AS [p]
+      WHERE [p].[Id] = @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Tracker | Login</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/fav.png">
+    <meta name="description" content="Reviews Management" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/login.css?version=5">
+</head>
+
+<body>
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <h2 class="active"></h2>
+
+            <img src="assets/images/logo.png" class="img-fluid w-75" alt="">
+
+            <form id="loginform" class="mt-1">
+                <input type="text" id="email" class="fadeIn second" name="login" placeholder="Email">
+                <div class="position-relative">
+                    <input type="password" id="password" class="fadeIn" name="login" placeholder="password"
+                        aria-describedby="basic-addon1">
+                    <i id="eye" class="eye fa-solid fa-eye-slash fa-lg position-absolute top-50 translate-middle-y"></i>
+                </div>
+                <input type="submit" class="fadeIn fourth" id="login" value="Log In">
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/15e8ed2b84.js" crossorigin="anonymous"></script>
+    <script>
+
+
+
+
+
+        $("#eye").click(function () {
+            var type = $("#password").attr('type');
+
+            switch (type) {
+                case "text":
+                    $("#eye").removeClass('fa-eye');
+                    $("#eye").addClass('fa-eye-slash');
+                    $("#password").attr('type', 'password');
+                    break;
+                case "password":
+                    $("#eye").removeClass('fa-eye-slash');
+                    $("#eye").addClass('fa-eye');
+                    $("#password").attr('type', 'text');
+                    break;
+
+                default:
+                    window.location.reload();
+                    break;
+            }
+
+        })
+
+
+        $("#loginform").submit(function (e) {
+            e.preventDefault();
+
+            $("#login").attr('disabled', '');
+            $("#login").val('Loading..');
+
+            var email = $("#email").val();
+            var password = $("#password").val();
+
+            var obj = { "Email": email, "Password": password }
+
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "https://rev.ameksaapii.xyz/User/Login",
+                data: JSON.stringify(obj),
+                success: function (res) {
+                    if (res == false) {
+                        $("#login").removeAttr('disabled');
+                        $("#login").val('Log In');
+                        alert('Wrong Email or Password')
+                    }
+
+                    else {
+                        if (typeof res.id == "string") {
+                            localStorage.setItem('UserId', res.id);
+                            localStorage.setItem('FullName', res.fullName);
+                            localStorage.setItem('PhoneNumber', res.phoneNumber);
+                            localStorage.setItem('Email', res.email);
+                            window.open('Signedin/index.html', "_self");
+                        } 
+                        else {
+                            $("#login").removeAttr('disabled');
+                            $("#login").val('Log In');
+                            alert('Wrong Email or Password')
+                        }
+                    }
+
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
